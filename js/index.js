@@ -68,10 +68,11 @@
 const wordLookupRequest = async (lookup) => {
     lookup = lookup.replace(/[\u2000-\u206F\u2E00-\u2E7F!"#$%&()*+,\.\/:;<=>?@\[\]^_`{|}~]/g, ''); //all punct but - and '
     lookup = lookup.replace(/'(.*?)'/g, '$1'); //add ' if not just one (quoted)
+    console.log(lookup);
     let response = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${lookup}`
     );
-    const sorry = `Sorry, we could not find " ${lookup} " in the dictionary, or the service is down. You can try the search again at later time or head to the web instead.`
+    const sorry = `Sorry, we could not find "${lookup}" in the dictionary, or the service is down. You can try the search again at later time or head to the web instead.`
     if (response.status >= 200 && response.status <= 299) {
         let json = await response.json();
         let phon = "";
