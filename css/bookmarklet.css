@@ -64,7 +64,6 @@
     }
 
     .def-tooltip:after {
-        /* font-family: 'Courier New', Courier, monospace; */
         text-transform: none;
         content: attr(data-tooltip);
         font-size: 11px;
