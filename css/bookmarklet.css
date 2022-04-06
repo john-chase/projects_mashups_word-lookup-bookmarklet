@@ -52,7 +52,7 @@
         opacity: 0;
         pointer-events: none;
         left: 50%;
-        top: -2px;
+        top: 1px;
         transform: translate3d(-50%, 20px, 0);
         transition: all 0.3s ease;
         transition-delay: 1.2s;
@@ -97,21 +97,12 @@
         opacity: 1;
     }
 
-    /* .def-tooltip:hover:before {
-        transform: translate3d(-50%, calc(-50% - 4px), 0);
-    }
-
-    .def-tooltip:hover:after {
-        transform: translate3d(-50%, calc(-80% - 16px), 0);
-    } */
-
     .def-tooltip .def-tooltip-content::before {
         background-color: dodgerblue;
         content: "";
         height: 10px;
         position: absolute;
         transform: rotate(135deg);
-        /*was 45*/
         width: 10px;
     }
 
