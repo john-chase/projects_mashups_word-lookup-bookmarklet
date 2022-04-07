@@ -1,0 +1,30 @@
+{
+  "name": "word-lookup-bookmarklet",
+  "version": "1.0.0",
+  "description": "Javascript code uses API to fetch definitions wrapped in a bookmarklet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet.git"
+  },
+  "keywords": [
+    "bookmarklet",
+    "definition",
+    "dictionary",
+    "lookup",
+    "api"
+  ],
+  "author": "John Chase",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet/issues"
+  },
+  "homepage": "https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9"
+  }
+}
