@@ -1,4 +1,4 @@
-javascript: (() => {
+(() => {
     /*inject styles*/
     const styleElem = document.head.appendChild(document.createElement("style"));
     styleElem.innerText = `
