@@ -51,8 +51,8 @@
         content: attr(data-tooltip);
         position: absolute;
         left: 50%;
-        top: 0;
-        transform: translate3d(-50%, 18px, 0);
+        top: 1.5rem;
+        transform: translate3d(-50%, 1.5rem, 0);
         transition: all 0.3s ease;
         transition-delay: 1.2s;
         width: -webkit-max-content;
