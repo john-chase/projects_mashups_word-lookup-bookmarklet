@@ -1,0 +1,10 @@
+/*@license
+ *author: John Chase
+ *name: word-lookup-bookmarklet
+ *version: 1.0.3
+ *description: Javascript code uses API to fetch definitions wrapped in a bookmarklet
+ *repository: git+https: *github.com/john-chase/projects_mashups_word-lookup-bookmarklet.git
+ *keywords: bookmarklet definition dictionary lookup api
+ *license: MIT
+ *homepage: https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet#readme
+ */

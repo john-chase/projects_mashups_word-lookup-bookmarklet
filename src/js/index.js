@@ -1,17 +1,18 @@
-/*
- *Name: WordLookup Bookmarklet
- *Description: Javascript code uses API to fetch definitions wrapped in a bookmarklet
- *Author: John Chase 
- *Date: 4/5/2022
- *License: MIT
- *Version: 1.0.0
- *Git: https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet
+/*@license
+ *author: John Chase
+ *name: word-lookup-bookmarklet
+ *version: 1.0.3
+ *description: Javascript code uses API to fetch definitions wrapped in a bookmarklet
+ *repository: git+https: *github.com/john-chase/projects_mashups_word-lookup-bookmarklet.git
+ *keywords: bookmarklet definition dictionary lookup api
+ *license: MIT
+ *homepage: https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet#readme
  */
 (() => {
     /*inject styles*/
     const styleElem = document.head.appendChild(document.createElement("style"));
     styleElem.innerText = `
-    /*GENERAL*/ .p { border: 1px solid dodgerblue; border-radius: .5rem; padding: .5rem; margin: 1rem 5rem; font-size: 15px; line-height: 21px; } .hidden { display: none; } /*DEFINITION GROUP*/ .def-div { background-color: dodgerblue; position: fixed; z-index: 99999999; min-width: 100%; height: 32px; top: 0; text-align: left; } .def-span { padding: 0 0 12px 4px; text-align: center; color: blue; font-weight: bold; font-style: italic; margin: 0.5rem; } .def-help { font-style: italic; margin: 0.5rem; } /*TOOLTIPS*/ .def-tooltip { position: relative; transition: all 0.3s ease; text-decoration: none; cursor: grabbing; z-index: 999999; box-sizing: border-box; } .def-tooltip:after { content: attr(data-tooltip); position: absolute; left: 50%; top: 1.5rem; transform: translate3d(-50%, 1.5rem, 0); transition: all 0.3s ease; transition-delay: 1.2s; width: -webkit-max-content; width: -moz-max-content; width: max-content; max-width: 200px !important; opacity: 0; pointer-events: none; border-radius: 4px; background: dodgerblue; color: white; font-size: 11px; font-weight: bold; text-align: left; line-height: 14px; text-transform: none; white-space: pre-line; padding: 4px 8px; } .def-tooltip:hover { background-color: rgba(0, 0, 0, 0.12); } .def-tooltip:hover:after { opacity: 1; } .def-tooltip-not-found:after { color: white; font-weight: bold; background: red; } /*TOGGLE SWITCH*/ input[type=checkbox], .def-input { margin: 0; -webkit-appearance: none; appearance: none; padding: 0 0 0 30px; border-radius: 16px; background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) #ccc -16px; transition: 0.3s ease-in-out; position: inherit; height: 32px; width: 64px; top: 0; bottom: 0; box-shadow: none; } .def-input::before { content: "OFF"; font: bold 12px/32px Verdana; color: white; text-shadow: 0 1px black; } .def-input:checked { padding: 0 0 0 8px; background-color: rgb(37, 151, 62); background-position: 16px; height: 32px; width: 64px; } .def-input:checked::before { content: "ON"; }
+    /*GENERAL*/ .p { border: 1px solid dodgerblue; border-radius: .5rem; padding: .5rem; margin: 1rem 5rem; font-size: 15px; line-height: 21px; } .hidden { display: none; } /*DEFINITION GROUP*/ .def-div { background-color: dodgerblue; position: fixed; z-index: 99999999; min-width: 100%; height: 32px; top: 0; text-align: left; } .def-span { padding: 0 0 12px 4px; text-align: center; color: blue; font-weight: bold; font-style: italic; margin: 0.5rem; } .def-help { font-style: italic; margin: 0.5rem; } /*TOOLTIPS*/ .def-tooltip { position: relative; transition: all 0.3s ease; text-decoration: none; cursor: grabbing; z-index: 999999; box-sizing: border-box; } .def-tooltip:after { content: attr(data-tooltip); position: absolute; left: 50%; top: 1rem; transform: translate3d(-50%, 1rem, 0); transition: all 0.3s ease; transition-delay: 1.2s; width: -webkit-max-content; width: -moz-max-content; width: max-content; max-width: 200px !important; opacity: 0; pointer-events: none; border-radius: 4px; background: dodgerblue; color: white; font-size: 11px; font-weight: bold; text-align: left; line-height: 14px; text-transform: none; white-space: pre-line; padding: 4px 8px; } .def-tooltip:hover { background-color: rgba(0, 0, 0, 0.12); } .def-tooltip:hover:after { opacity: 1; } .def-tooltip-not-found:after { color: white; font-weight: bold; background: red; } /*TOGGLE SWITCH*/ input[type=checkbox], .def-input { margin: 0; -webkit-appearance: none; appearance: none; padding: 0 0 0 30px; border-radius: 16px; background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) #ccc -16px; transition: 0.3s ease-in-out; position: inherit; height: 32px; width: 64px; top: 0; bottom: 0; box-shadow: none; } .def-input::before { content: "OFF"; font: bold 12px/32px Verdana; color: white; text-shadow: 0 1px black; } .def-input:checked { padding: 0 0 0 8px; background-color: rgb(37, 151, 62); background-position: 16px; height: 32px; width: 64px; } .def-input:checked::before { content: "ON"; }
     `;
     /*set up elements*/
     const body = document.getElementsByTagName("body")[0];
@@ -37,7 +38,7 @@
     let originalP = [];
     /*break p into words, wrap with spans*/
     const addSpans = (paragraph) => {
-        paragraph = paragraph.replace('&nbsp;', ' '); //!!!no workey
+        paragraph = paragraph.replace('&nbsp;', ' ');
         let words = paragraph.split(" ");
         let newParagraph = '';
         words.forEach(word => {
@@ -100,7 +101,6 @@ const wordLookupRequest = async (lookup) => {
     } else {
         return sorry;
     }
-    // }
 }
 /*highlight the word*/
 function onmouseoverspan() {
