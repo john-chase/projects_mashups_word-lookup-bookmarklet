@@ -1,5 +1,5 @@
 # Mashup API Project: Word Lookup Bookmarklet
-![The bookmarklet toolbar](images/word-lookup-bookmarklet-bar.png)
+![The bookmarklet toolbar](dist/images/word-lookup-bookmarklet-bar.png)
 ## This application uses the [Free Dictionary API](https://dictionaryapi.dev/) to define words.
 
 
