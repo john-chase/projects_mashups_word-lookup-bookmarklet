@@ -32,7 +32,6 @@ main { padding: 1rem; } /*GENERAL*/ .p { border: 1px solid dodgerblue; border-ra
         let words = paragraph.split(" ");
         let newParagraph = '';
         words.forEach(word => {
-            console.log(word.indexOf(/\xC2\xA0\s/));
             if(word.includes(",")) {
                 newParagraph += `<span>${word.split(",")[0]}</span>,`;
                 newParagraph += `<span>${word.split(",")[1]}</span> `;
