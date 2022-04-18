@@ -9,8 +9,7 @@
 ### How do I install a BKMT?
 - [Matthew Reidsma's Github instructions](https://mreidsma.github.io/bookmarklets/installing.html)
 
-More Instructions: Get the JavaScript code [here](https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet/blob/main/dist/js/main.js) to paste into the URL input of your bookmarklet. 
-If you prefer definitions displayed in the toolbar instead of a tooltip, get that version [here](https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet/blob/barDisplay/dist/js/main.js).
+More Instructions: Get the JavaScript code [here](https://github.com/john-chase/projects_mashups_word-lookup-bookmarklet/blob/simplified/dist/js/main.js) to paste into the URL/Edit Address input of your bookmarklet.
 
 Notes: This BKMT works best on pages with text content like blogs, articles, news stories, etc. Tested on most modern browsers (not mobile devices - there are apps for that).
 
