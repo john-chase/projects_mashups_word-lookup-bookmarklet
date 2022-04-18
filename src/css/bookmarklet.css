@@ -36,6 +36,7 @@
     .def-help {
         font-style: italic;
         margin: 0.5rem;
+        color:black;
     }
 
     /*TOOLTIPS*/
