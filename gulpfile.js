@@ -15,6 +15,7 @@ function html(done) {
 function css(done) {
     src(`${origin}/css/bookmarklet.css`)
         .pipe(cleanCss())
+        .pipe(rename("bookmarklet.min.css"))
         .pipe(dest(`${destination}/css`))
     done();
 }
@@ -25,7 +26,7 @@ function js(done) {
         }))    
         .pipe(uglify())
         .pipe(gap.prependText('javascript:'))  
-        .pipe(rename(`main.js`))      
+        .pipe(rename("main.js"))      
         .pipe(dest(`${destination}/js/`));
     done();
 }

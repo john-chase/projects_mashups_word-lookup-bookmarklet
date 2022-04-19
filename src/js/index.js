@@ -1,7 +1,7 @@
 javascript: (() => {
     var styleElem = document.createElement('link');
     styleElem.setAttribute("rel", "stylesheet");
-    styleElem.setAttribute("href", "https://projects.theartoftechllc.com/mashups/bookmarklet/css/bookmarklet.css");
+    styleElem.setAttribute("href", "https://projects.theartoftechllc.com/mashups/bookmarklet/css/bookmarklet.min.css");
     document.getElementsByTagName("head")[0].appendChild(styleElem);
     var body = document.getElementsByTagName("body")[0];
     var defDiv = document.createElement("div");
@@ -54,7 +54,6 @@ javascript: (() => {
                 newParagraph += `<span>${word}</span> `;
             }
         });
-        console.log("AddSpans ", newParagraph);
         return newParagraph;
     };
     defToggle.onchange = function() {
@@ -85,7 +84,7 @@ javascript: (() => {
 })();
 var wordLookupRequest = function(lookup) {
     lookup = lookup.replace(/[^\w\s]|_/g, '').replace(/\s+/g, " ");
-    console.log("String to lookup: ", lookup);
+    // console.log("String to lookup: ", lookup);
     var defDiv = document.getElementsByClassName("def-div")[0];
     var sorry = `Sorry, we could not find ${lookup} in the dictionary, or the service is down. You can try the search again at later time or head to the <a href="https://www.dictionary.com/" target="_blank">web</a> instead.`;
     var defHelp = document.getElementById("def-help");
@@ -112,7 +111,7 @@ var wordLookupRequest = function(lookup) {
                 });
             }
             var defo = json[0].meanings[0].definitions[0].definition ? json[0].meanings[0].definitions[0].definition : '';
-            console.log(`${word.toUpperCase()}${audio} - ${speechPart}${phon}: ${defo}`);
+            // console.log(`${word.toUpperCase()}${audio} - ${speechPart}${phon}: ${defo}`);
             defDiv.classList.remove('def-tooltip-not-found');
             defHelp.innerHTML = `${word.toUpperCase()}${audio} - ${speechPart}${phon}: ${defo}`;
         } else {
