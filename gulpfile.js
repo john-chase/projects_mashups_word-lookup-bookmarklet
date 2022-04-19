@@ -2,6 +2,7 @@ const {src, dest, series, parallel, watch} = require('gulp');
 const del = require('del');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 const cleanCss = require('gulp-clean-css');
 const gap = require('gulp-append-prepend');
 const origin = './src';
@@ -23,8 +24,9 @@ function js(done) {
             presets: ["@babel/preset-env"]
         }))    
         .pipe(uglify())
-        .pipe(gap.prependText('javascript:'))        
-        .pipe(dest(`${destination}/js`));
+        .pipe(gap.prependText('javascript:'))  
+        .pipe(rename(`main.js`))      
+        .pipe(dest(`${destination}/js/`));
     done();
 }
 function images(done) {
